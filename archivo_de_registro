@@ -1,0 +1,32 @@
+2020-07-17 21:36:53.529 -04 [6988] LOG:  iniciando PostgreSQL 12.3, compiled by Visual C++ build 1914, 64-bit
+2020-07-17 21:36:53.536 -04 [6988] LOG:  no se pudo enlazar a la dirección IPv6 «::1»: Permission denied
+2020-07-17 21:36:53.536 -04 [6988] HINT:  ¿Hay otro postmaster corriendo en el puerto 5432? Si no, aguarde unos segundos y reintente.
+2020-07-17 21:36:53.537 -04 [6988] LOG:  no se pudo enlazar a la dirección IPv4 «127.0.0.1»: Permission denied
+2020-07-17 21:36:53.537 -04 [6988] HINT:  ¿Hay otro postmaster corriendo en el puerto 5432? Si no, aguarde unos segundos y reintente.
+2020-07-17 21:36:53.537 -04 [6988] WARNING:  no se pudo crear el socket de escucha para «localhost»
+2020-07-17 21:36:53.537 -04 [6988] FATAL:  no se pudo crear ningún socket TCP/IP
+2020-07-17 21:36:53.539 -04 [6988] LOG:  el sistema de bases de datos está apagado
+2020-07-17 21:37:16.207 -04 [11188] LOG:  iniciando PostgreSQL 12.3, compiled by Visual C++ build 1914, 64-bit
+2020-07-17 21:37:16.214 -04 [11188] LOG:  no se pudo enlazar a la dirección IPv6 «::1»: Permission denied
+2020-07-17 21:37:16.214 -04 [11188] HINT:  ¿Hay otro postmaster corriendo en el puerto 5432? Si no, aguarde unos segundos y reintente.
+2020-07-17 21:37:16.214 -04 [11188] LOG:  no se pudo enlazar a la dirección IPv4 «127.0.0.1»: Permission denied
+2020-07-17 21:37:16.214 -04 [11188] HINT:  ¿Hay otro postmaster corriendo en el puerto 5432? Si no, aguarde unos segundos y reintente.
+2020-07-17 21:37:16.214 -04 [11188] WARNING:  no se pudo crear el socket de escucha para «localhost»
+2020-07-17 21:37:16.215 -04 [11188] FATAL:  no se pudo crear ningún socket TCP/IP
+2020-07-17 21:37:16.215 -04 [11188] LOG:  el sistema de bases de datos está apagado
+2020-07-17 21:38:45.606 -04 [4608] LOG:  iniciando PostgreSQL 12.3, compiled by Visual C++ build 1914, 64-bit
+2020-07-17 21:38:45.613 -04 [4608] LOG:  no se pudo enlazar a la dirección IPv6 «::1»: Permission denied
+2020-07-17 21:38:45.613 -04 [4608] HINT:  ¿Hay otro postmaster corriendo en el puerto 5432? Si no, aguarde unos segundos y reintente.
+2020-07-17 21:38:45.613 -04 [4608] LOG:  no se pudo enlazar a la dirección IPv4 «127.0.0.1»: Permission denied
+2020-07-17 21:38:45.613 -04 [4608] HINT:  ¿Hay otro postmaster corriendo en el puerto 5432? Si no, aguarde unos segundos y reintente.
+2020-07-17 21:38:45.613 -04 [4608] WARNING:  no se pudo crear el socket de escucha para «localhost»
+2020-07-17 21:38:45.614 -04 [4608] FATAL:  no se pudo crear ningún socket TCP/IP
+2020-07-17 21:38:45.614 -04 [4608] LOG:  el sistema de bases de datos está apagado
+2020-07-17 21:41:31.690 -04 [6840] LOG:  iniciando PostgreSQL 12.3, compiled by Visual C++ build 1914, 64-bit
+2020-07-17 21:41:31.697 -04 [6840] LOG:  no se pudo enlazar a la dirección IPv6 «::1»: Permission denied
+2020-07-17 21:41:31.697 -04 [6840] HINT:  ¿Hay otro postmaster corriendo en el puerto 5432? Si no, aguarde unos segundos y reintente.
+2020-07-17 21:41:31.698 -04 [6840] LOG:  no se pudo enlazar a la dirección IPv4 «127.0.0.1»: Permission denied
+2020-07-17 21:41:31.698 -04 [6840] HINT:  ¿Hay otro postmaster corriendo en el puerto 5432? Si no, aguarde unos segundos y reintente.
+2020-07-17 21:41:31.698 -04 [6840] WARNING:  no se pudo crear el socket de escucha para «localhost»
+2020-07-17 21:41:31.698 -04 [6840] FATAL:  no se pudo crear ningún socket TCP/IP
+2020-07-17 21:41:31.699 -04 [6840] LOG:  el sistema de bases de datos está apagado
