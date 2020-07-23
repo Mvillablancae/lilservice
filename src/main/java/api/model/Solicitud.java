@@ -24,14 +24,14 @@ public class Solicitud {
 	@Column(name = "id")
 	private @Id @GeneratedValue Long id;
 
+	@Column(name = "id_recurso")
+	private int id_recurso;
+
 	@Column(name = "fechasol")
 	private String fechasol;
 
 	@Column(name = "tipo_recurso")
 	private int tipo_recurso;
-
-	@Column(name = "id_recurso")
-	private int id_recurso;
 
 	@Type(type = "list-array")
 	@Column(name = "equipamiento",

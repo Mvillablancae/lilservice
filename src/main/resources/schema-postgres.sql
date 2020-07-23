@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS registro CASCADE;
 
 CREATE TABLE solicitud(
   id SERIAL NOT NULL,
-  fechasol CHAR(50),
+  fechasol TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   tipo_recurso INTEGER NOT NULL,
   id_recurso INTEGER NOT NULL,
   equipamiento INTEGER[] NOT NULL,
@@ -14,12 +14,11 @@ CREATE TABLE solicitud(
 );
 
 CREATE TABLE registro(
-  id SERIAL NOT NULL ,
-  idSolicitud INTEGER NOT NULL,
-  fechaReg TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  bloqueHorario VARCHAR(15) NOT NULL,
-  idRecurso INTEGER NOT NULL,
+  id SERIAL NOT NULL,
+  idsolicitud INTEGER NOT NULL,
+  fecha_inicio TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  fecha_termino TIMESTAMP,
   PRIMARY KEY (id),
-  FOREIGN KEY (idSolicitud) 
+  FOREIGN KEY (idsolicitud) 
     REFERENCES solicitud(id)
 );
