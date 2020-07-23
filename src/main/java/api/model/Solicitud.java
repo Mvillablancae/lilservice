@@ -7,54 +7,103 @@ import javax.persistence.Table;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.util.List;
+import com.vladmihalcea.hibernate.type.array.ListArrayType;
+import org.hibernate.annotations.TypeDef;
+import org.hibernate.annotations.Type;
+
 
 @Entity
 @Table(name = "solicitud", schema="public")
+@TypeDef(
+    name = "list-array",
+    typeClass = ListArrayType.class
+)
 public class Solicitud {
+	
 	@Column(name = "id")
 	private @Id @GeneratedValue Long id;
-	@Column(name = "equipamiento")
-	private String equipamiento;
+
+	@Column(name = "fechasol")
+	private String fechasol;
+
+	@Column(name = "tipo_recurso")
+	private int tipo_recurso;
+
+	@Column(name = "id_recurso")
+	private int id_recurso;
+
+	@Type(type = "list-array")
+	@Column(name = "equipamiento",
+	columnDefinition = "integer[]")
+	private List<Integer> equipamiento;
+
 	@Column(name = "procedimiento")
 	private String procedimiento;
-	@Column(name = "equipo")
-	private String equipo;
-	@Column(name = "p_or_s")
-	private boolean p_or_s;
+
+	@Type(type = "list-array")
+	@Column(name = "equipo",
+	columnDefinition = "integer[]")
+	private List<Integer> equipo;
+
+	@Column(name = "estado")
+	private boolean estado;
+
 
 	Solicitud() {}
 
-	Solicitud(String equipamiento, String procedimiento, String equipo, boolean p_or_s) {
-
+	Solicitud(String fechasol, int tipo_recurso, int id_recurso, List<Integer> equipamiento, String procedimiento, List<Integer> equipo, boolean estado) {
+		this.fechasol = fechasol;
+		this.tipo_recurso = tipo_recurso;
+		this.id_recurso = id_recurso;
 		this.equipamiento = equipamiento;
 		this.procedimiento = procedimiento;
 		this.equipo = equipo;
-		this.p_or_s = p_or_s;
+		this.estado = estado;
 	}
 
 	public Long getId() {
 		return this.id;
 	}
-	public String getEquipamiento() {
+	public String getFecha() {
+		return this.fechasol;
+	}
+	public int getTipo() {
+		return this.tipo_recurso;
+	}
+	public int getIdRecurso() {
+		return this.id_recurso;
+	}
+
+	public List<Integer> getEquipamiento() {
 		return this.equipamiento;
 	}
 	public String getProcedimiento() {
 		return this.procedimiento;
 	}
 
-	public String getEquipo() {
+	public List<Integer> getEquipo() {
 		return this.equipo;
 	}
 
-	public boolean getPabellon() {
-		return this.p_or_s;
+	public boolean getEstado() {
+		return this.estado;
 	}
 
 	public void setId(Long id) {
 		this.id = id;
 	}
+	public void setFecha(String fechasol) {
+		this.fechasol = fechasol;
+	}
+	public void setIdRecurso(int id_recurso) {
+		this.id_recurso = id_recurso;
+	}
+	public void setTipoRecurso(int tipo_recurso) {
+		this.tipo_recurso = tipo_recurso;
+	}
 
-	public void setEquipamiento(String equipamiento) {
+	public void setEquipamiento(List<Integer> equipamiento) {
 		this.equipamiento = equipamiento;
 	}
 
@@ -62,12 +111,12 @@ public class Solicitud {
 		this.procedimiento = proc;
 	}
 
-	public void setEquipo(String equipo) {
+	public void setEquipo(List<Integer> equipo) {
 		this.equipo = equipo;
 	}
 
-	public void setP_or_S(boolean p_or_s) {
-		this.p_or_s = p_or_s;
+	public void setEstado(boolean estado) {
+		this.estado = estado;
 	}
 
 	/*@Override
@@ -91,6 +140,6 @@ public class Solicitud {
 	public String toString() {
 		return "Solicitud{" + "id=" + this.id + ", equipamiento='" + this.equipamiento
 		+ ", procedimiento='" + this.procedimiento + ", equipo='" + this.equipo 
-		+ '\'' + ", pabellón_or_sala'" + this.p_or_s + '\'' + '}';
+		+ '\'' + ", estado='" + this.estado + '\'' + '}';
 	}
 }

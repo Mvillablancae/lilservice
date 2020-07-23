@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+
 @RestController
 class SolicitudController {
 
@@ -22,12 +23,13 @@ class SolicitudController {
 		this.repository = repository;
 	}
 
+
 	@GetMapping("/solicitudes")
 	List<Solicitud> all(){
 		return (List<Solicitud>) repository.findAll();
 	}
 
-	@PostMapping("/solicitudes")
+	@PostMapping("/reservas")
 	Solicitud newSolicitud(@RequestBody Solicitud newSolicitud) {
 		return repository.save(newSolicitud);
 	}
