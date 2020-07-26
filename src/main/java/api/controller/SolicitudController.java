@@ -29,7 +29,7 @@ class SolicitudController {
 		return (List<Solicitud>) repository.findAll();
 	}
 
-	@PostMapping("/reservas")
+	@PostMapping("/solicitar")
 	Solicitud newSolicitud(@RequestBody Solicitud newSolicitud) {
 		return repository.save(newSolicitud);
 	}

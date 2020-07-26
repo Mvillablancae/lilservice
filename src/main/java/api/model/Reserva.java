@@ -1,7 +1,9 @@
 package api.model;
 
 import java.util.Objects;
+import java.sql.Timestamp;
 
+import javax.persistence.GenerationType;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Column;
@@ -17,31 +19,30 @@ import api.model.Solicitud;
 
 
 @Entity
-@Table(name = "registro", schema="public")
+@Table(name = "reserva", schema="public")
 
-public class Registro {
+public class Reserva{
 	
 	@Column(name = "id")
-    private @Id @GeneratedValue Long id;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @OneToOne(targetEntity=Solicitud.class)
     @JoinColumn(name = "idsolicitud", referencedColumnName = "id")
 	private Solicitud idsolicitud;
 
 	@Column(name = "fecha_inicio")
-	private String fecha_inicio;
+	@GeneratedValue(strategy= GenerationType.AUTO)
+	private Timestamp fecha_inicio;
 
 	@Column(name = "fecha_termino")
-	private String fecha_termino;
+	private Timestamp fecha_termino;
 
 
-	Registro() {}
+	Reserva() {}
 
-	Registro(Solicitud idSolicitud, String fecha_inicio, String fecha_termino) {
+	Reserva(Solicitud idSolicitud) {
         this.idsolicitud = idSolicitud;
-		this.fecha_inicio = fecha_inicio;
-		this.fecha_termino = fecha_termino;
-
 	}
     //Getters
 	public Long getId() {
@@ -50,10 +51,10 @@ public class Registro {
     public Solicitud getIdSolicitud() {
 		return this.idsolicitud;
 	}
-	public String getFecha_inicio() {
+	public Timestamp getFecha_inicio() {
 		return this.fecha_inicio;
 	}
-	public String getFecha_termino() {
+	public Timestamp getFecha_termino() {
 		return this.fecha_termino;
     }
     //Setters
@@ -63,10 +64,10 @@ public class Registro {
     public void setIdSolicitud(Solicitud idSolicitud) {
 		this.idsolicitud = idSolicitud;
 	}
-	public void setFecha_inicio(String fecha_inicio) {
+	public void setFecha_inicio(Timestamp fecha_inicio) {
 		this.fecha_inicio = fecha_inicio;
 	}
-	public void setFecha_termino(String fecha_termino) {
+	public void setFecha_termino(Timestamp fecha_termino) {
 		this.fecha_termino = fecha_termino;
 	}
 

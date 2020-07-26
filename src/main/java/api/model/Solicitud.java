@@ -1,7 +1,9 @@
 package api.model;
 
 import java.util.Objects;
+import java.sql.Timestamp;
 
+import javax.persistence.GenerationType;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Column;
@@ -22,13 +24,14 @@ import org.hibernate.annotations.Type;
 public class Solicitud {
 	
 	@Column(name = "id")
-	private @Id @GeneratedValue Long id;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
 	@Column(name = "id_recurso")
 	private int id_recurso;
 
 	@Column(name = "fechasol")
-	private String fechasol;
+	private Timestamp fechasol;
 
 	@Column(name = "tipo_recurso")
 	private int tipo_recurso;
@@ -52,7 +55,7 @@ public class Solicitud {
 
 	Solicitud() {}
 
-	Solicitud(String fechasol, int tipo_recurso, int id_recurso, List<Integer> equipamiento, String procedimiento, List<Integer> equipo, boolean estado) {
+	Solicitud(Timestamp fechasol, int tipo_recurso, int id_recurso, List<Integer> equipamiento, String procedimiento, List<Integer> equipo, boolean estado) {
 		this.fechasol = fechasol;
 		this.tipo_recurso = tipo_recurso;
 		this.id_recurso = id_recurso;
@@ -65,7 +68,7 @@ public class Solicitud {
 	public Long getId() {
 		return this.id;
 	}
-	public String getFecha() {
+	public Timestamp getFecha() {
 		return this.fechasol;
 	}
 	public int getTipo() {
@@ -93,7 +96,7 @@ public class Solicitud {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public void setFecha(String fechasol) {
+	public void setFecha(Timestamp fechasol) {
 		this.fechasol = fechasol;
 	}
 	public void setIdRecurso(int id_recurso) {

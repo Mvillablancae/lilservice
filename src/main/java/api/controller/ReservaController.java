@@ -1,9 +1,10 @@
 package api.controller;
 
-import api.model.Registro;
-import api.repository.RegistroRepository;
+import api.model.Reserva;
+import api.repository.ReservaRepository;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.slf4j.Logger;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,22 +16,23 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-class RegistroController {
+class ReservaController {
 
-	private final RegistroRepository repository;
+	private final ReservaRepository repository;
 
-	RegistroController(RegistroRepository repository) {
+	ReservaController(ReservaRepository repository) {
 		this.repository = repository;
 	}
 
 
-	@GetMapping("/registros")
-	List<Registro> all(){
-		return (List<Registro>) repository.findAll();
+	@GetMapping("/reservas")
+	List<Reserva> all(){
+		return (List<Reserva>) repository.findAll();
 	}
 
-	@PostMapping("/registrar")
-	Registro newRegistro(@RequestBody Registro newRegistro) {
-		return repository.save(newRegistro);
+	@PostMapping("/reservar")
+	Reserva newReserva(@RequestBody Reserva newReserva) {
+		System.out.println("No se puede por ahora u.u");
+		return null;//repository.save(newReserva);
 	}
 }

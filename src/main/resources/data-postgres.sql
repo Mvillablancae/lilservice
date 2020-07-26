@@ -6,5 +6,5 @@ INSERT INTO solicitud(tipo_recurso, id_recurso, equipamiento,procedimiento,equip
 INSERT INTO solicitud(tipo_recurso, id_recurso, equipamiento,procedimiento,equipo,estado) VALUES(1, 1243, ARRAY[1,7,3,4],'Quimio',ARRAY[1,2,3,4],false);
 INSERT INTO solicitud(tipo_recurso, id_recurso, equipamiento,procedimiento,equipo,estado) VALUES(1, 243, ARRAY[1,2,5,4],'Recuperación',ARRAY[1,2,3,4],true);
 
-INSERT INTO registro(idsolicitud) VALUES(1);
+INSERT INTO reserva(idsolicitud) VALUES(1);
 
