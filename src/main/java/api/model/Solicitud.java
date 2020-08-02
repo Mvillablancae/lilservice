@@ -51,7 +51,11 @@ public class Solicitud {
 
 	@Column(name = "estado")
 	private boolean estado;
-
+	
+	
+	/*
+	  
+	  */
 
 	Solicitud() {}
 
