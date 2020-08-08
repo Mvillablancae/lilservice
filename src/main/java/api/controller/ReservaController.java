@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 
 @RestController
@@ -24,12 +25,13 @@ class ReservaController {
 		this.repository = repository;
 	}
 
-
+	@CrossOrigin
 	@GetMapping("/reservas")
 	List<Reserva> all(){
 		return (List<Reserva>) repository.findAll();
 	}
 
+	@CrossOrigin
 	@PostMapping("/reservar")
 	Reserva newReserva(@RequestBody Reserva newReserva) {
 		System.out.println("No se puede por ahora u.u");

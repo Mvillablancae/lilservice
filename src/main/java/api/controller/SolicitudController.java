@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 
 @RestController
@@ -23,12 +24,13 @@ class SolicitudController {
 		this.repository = repository;
 	}
 
-
+	@CrossOrigin
 	@GetMapping("/solicitudes")
 	List<Solicitud> all(){
 		return (List<Solicitud>) repository.findAll();
 	}
 
+	@CrossOrigin
 	@PostMapping("/solicitar")
 	Solicitud newSolicitud(@RequestBody Solicitud newSolicitud) {
 		return repository.save(newSolicitud);
