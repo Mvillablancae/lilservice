@@ -40,6 +40,7 @@ class SolicitudController {
 	// Single item
 
 	// tag::get-single-item[]
+	@CrossOrigin
 	@GetMapping("/solicitudes/{id}")
 	Solicitud one(@PathVariable Long id) {
 
