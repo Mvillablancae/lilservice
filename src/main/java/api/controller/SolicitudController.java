@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.hateoas.EntityModel;
 
 
 @RestController
@@ -39,16 +40,14 @@ class SolicitudController {
 	// Single item
 
 	// tag::get-single-item[]
-	/*@GetMapping("/solicitudes/{id}")
-	EntityModel<Solicitud> one(@PathVariable Long id) {
+	@GetMapping("/solicitudes/{id}")
+	Solicitud one(@PathVariable Long id) {
 
 		Solicitud solicitud = repository.findById(id) //
 				.orElseThrow(() -> new SolicitudNotFoundException(id));
 
-		return EntityModel.of(solicitud, //
-				linkTo(methodOn(SolicitudController.class).one(id)).withSelfRel(),
-				linkTo(methodOn(SolicitudController.class).all()).withRel("solicitudes"));
-	}*/
+		return solicitud;
+	}
 	// end::get-single-item[]
 
 	/*@PutMapping("/solicitudes/{id}")
