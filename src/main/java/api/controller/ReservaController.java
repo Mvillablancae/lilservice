@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.hateoas.EntityModel;
 
 
 @RestController
@@ -34,7 +35,7 @@ class ReservaController {
 
 	@CrossOrigin
 	@GetMapping("/reservas/{id}")
-	Solicitud one(@PathVariable Long id) {
+	Reserva one(@PathVariable Long id) {
 
 		Reserva reserva = repository.findById(id) //
 				.orElseThrow(() -> new ReservaNotFoundException(id));
