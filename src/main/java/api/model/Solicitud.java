@@ -71,7 +71,7 @@ public class Solicitud {
 	public Long getId() {
 		return this.id;
 	}
-	public Times                                                                                                                tamp getFecha() {
+	public String getFecha() {
 		return this.fechasol;
 	}
 	public int getTipo() {
