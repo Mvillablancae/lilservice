@@ -24,6 +24,7 @@ class ReservaController {
 	ReservaController(ReservaRepository repository) {
 		this.repository = repository;
 	}
+	
 
 	@CrossOrigin
 	@GetMapping("/reservas")
@@ -32,9 +33,19 @@ class ReservaController {
 	}
 
 	@CrossOrigin
+	@GetMapping("/reservas/{id}")
+	Solicitud one(@PathVariable Long id) {
+
+		Reserva reserva = repository.findById(id) //
+				.orElseThrow(() -> new ReservaNotFoundException(id));
+
+		return reserva;
+	}
+
+	@CrossOrigin
 	@PostMapping("/reservar")
 	Reserva newReserva(@RequestBody Reserva newReserva) {
-		System.out.println("No se puede por ahora u.u");
-		return null;//repository.save(newReserva);
+		return repository.save(newReserva);
 	}
+
 }

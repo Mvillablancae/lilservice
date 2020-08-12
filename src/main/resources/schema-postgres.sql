@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS reserva CASCADE;
 
 CREATE TABLE solicitud(
   id SERIAL NOT NULL,
-  fechasol TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  fechasol VARCHAR(100) NOT NULL,
   tipo_recurso INTEGER NOT NULL,
   id_recurso INTEGER NOT NULL,
   equipamiento INTEGER[] NOT NULL,
@@ -16,8 +16,8 @@ CREATE TABLE solicitud(
 CREATE TABLE reserva(
   id SERIAL NOT NULL,
   idsolicitud INTEGER NOT NULL,
-  fecha_inicio TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  fecha_termino TIMESTAMP,
+  fecha_inicio VARCHAR(100) NOT NULL,
+  fecha_termino VARCHAR(100) NOT NULL,
   PRIMARY KEY (id),
   FOREIGN KEY (idsolicitud) 
     REFERENCES solicitud(id)
