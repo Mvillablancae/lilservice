@@ -1,7 +1,7 @@
 package api.model;
 
 import java.util.Objects;
-import java.sql.Timestamp;
+
 
 import javax.persistence.GenerationType;
 import javax.persistence.Entity;
@@ -33,10 +33,10 @@ public class Reserva{
 
 	@Column(name = "fecha_inicio")
 	@GeneratedValue(strategy= GenerationType.AUTO)
-	private Timestamp fecha_inicio;
+	private String fecha_inicio;
 
 	@Column(name = "fecha_termino")
-	private Timestamp fecha_termino;
+	private String fecha_termino;
 
 
 	Reserva() {}
@@ -51,10 +51,10 @@ public class Reserva{
     public Solicitud getIdSolicitud() {
 		return this.idsolicitud;
 	}
-	public Timestamp getFecha_inicio() {
+	public String getFecha_inicio() {
 		return this.fecha_inicio;
 	}
-	public Timestamp getFecha_termino() {
+	public String getFecha_termino() {
 		return this.fecha_termino;
     }
     //Setters
@@ -64,10 +64,10 @@ public class Reserva{
     public void setIdSolicitud(Solicitud idSolicitud) {
 		this.idsolicitud = idSolicitud;
 	}
-	public void setFecha_inicio(Timestamp fecha_inicio) {
+	public void setFecha_inicio(String fecha_inicio) {
 		this.fecha_inicio = fecha_inicio;
 	}
-	public void setFecha_termino(Timestamp fecha_termino) {
+	public void setFecha_termino(String fecha_termino) {
 		this.fecha_termino = fecha_termino;
 	}
 

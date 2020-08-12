@@ -1,7 +1,6 @@
 package api.model;
 
 import java.util.Objects;
-import java.sql.Timestamp;
 
 import javax.persistence.GenerationType;
 import javax.persistence.Entity;
@@ -31,7 +30,7 @@ public class Solicitud {
 	private int id_recurso;
 
 	@Column(name = "fechasol")
-	private Timestamp fechasol;
+	private String fechasol;
 
 	@Column(name = "tipo_recurso")
 	private int tipo_recurso;
@@ -59,7 +58,7 @@ public class Solicitud {
 
 	Solicitud() {}
 
-	Solicitud(Timestamp fechasol, int tipo_recurso, int id_recurso, List<Integer> equipamiento, String procedimiento, List<Integer> equipo, boolean estado) {
+	Solicitud(String fechasol, int tipo_recurso, int id_recurso, List<Integer> equipamiento, String procedimiento, List<Integer> equipo, boolean estado) {
 		this.fechasol = fechasol;
 		this.tipo_recurso = tipo_recurso;
 		this.id_recurso = id_recurso;
@@ -72,7 +71,7 @@ public class Solicitud {
 	public Long getId() {
 		return this.id;
 	}
-	public Timestamp getFecha() {
+	public Times                                                                                                                tamp getFecha() {
 		return this.fechasol;
 	}
 	public int getTipo() {
@@ -100,7 +99,7 @@ public class Solicitud {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public void setFecha(Timestamp fechasol) {
+	public void setFecha(String fechasol) {
 		this.fechasol = fechasol;
 	}
 	public void setIdRecurso(int id_recurso) {
